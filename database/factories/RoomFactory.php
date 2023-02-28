@@ -17,10 +17,10 @@ class RoomFactory extends Factory
     public function definition(): array
     {
         return [
-            'roomDescription'=>fake()->lastname(),
-            'roomCapacity'=>fake()->firstname(),
-            'dateFrom'=>fake()->phoneNumber(),
-            'dateTo'=>fake()->address(),
+            'roomDescription'=>fake()->catchPhrase(),
+            'roomCapacity'=>fake()->randomNumber(2),
+            'dateFrom'=>fake()->date($format = 'Y-m-d', $max = 'now'),
+            'dateTo'=>fake()->date($format = 'Y-m-d', $max = 'now'),
         ];
     }
 }
